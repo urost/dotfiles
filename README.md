@@ -1,6 +1,6 @@
-# Use (n)vim
+# (n)vim presentation
 
-## Install Neovim
+## Installing Neovim
 
 Use this [link](https://github.com/neovim/neovim/wiki/Installing-Neovim).
 
