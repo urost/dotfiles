@@ -263,11 +263,6 @@ vmap k <Plug>MoveBlockUp
 "{{{ vim-erlang-omnicomplete
 Plug 'vim-erlang/vim-erlang-omnicomplete'
 "}}}
-"{{{ Shougo neocomplete plugins
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'Shougo/neoinclude.vim'
-" Plug 'Shougo/neco-syntax'
-"}}}
 "{{{ neco-look
 Plug 'ujihisa/neco-look'
 "}}}
@@ -337,6 +332,21 @@ else
   nmap <Leader>ncd :NeoComplCacheDisable<CR>
 endif
   "}}}
+"{{{ Shougo neocomplete plugins
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'Shougo/neoinclude.vim'
+Plug 'Shougo/neco-syntax'
+Plug 'Shougo/neco-vim'
+Plug 'davidhalter/jedi-vim' "{{{
+  autocmd FileType python setlocal omnifunc=jedi#completions
+	let g:jedi#completions_enabled = 0
+	let g:jedi#auto_vim_configuration = 0
+	let g:neocomplete#force_omni_input_patterns.python =
+	\ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+" alternative pattern: '\h\w*\|[^. \t]\.\w*'
+
+"}}}
+"}}}
 Plug 'beloglazov/vim-online-thesaurus' "{{{
 let g:online_thesaurus_map_keys = 0
 "}}}
